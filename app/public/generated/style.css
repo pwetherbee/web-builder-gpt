@@ -1,0 +1,27 @@
+
+body {
+    background: linear-gradient(to right, #f83600, #f9d423);
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+button {
+    font-size: 20px;
+    border-radius: 8px;
+    border: 2px solid #f9d423;
+    background-color: #f83600;
+    padding: 10px;
+    text-align: center;
+}
+
+#generated-number {
+    font-size: 25px;
+    color: #f83600;
+    font-weight: bold;
+    text-align: center;
+}

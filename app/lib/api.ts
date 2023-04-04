@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const fetchGPT = axios.create({
+export const gptAPI = axios.create({
   baseURL: "https://api.openai.com/v1",
   // withCredentials: true,
   headers: {

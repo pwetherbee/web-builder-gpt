@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import {
   Box,
+  Button,
   Container,
   Divider,
   Paper,
@@ -11,11 +12,33 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [prompt, setPrompt] = useState("");
+  const router = useRouter();
+  const [userPrompt, setUserPrompt] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState("");
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    const data = {
+      userPrompt,
+    };
+    try {
+      console.log(data);
+      const res = await axios.post("/api/create-site", data);
+      console.log(res.data);
+      router.push("/generated/index.html");
+      setResponse(res.data.message);
+    } catch (error) {
+      console.error(error);
+    }
+    setLoading(false);
+  };
 
   return (
     <>
@@ -61,8 +84,28 @@ export default function Home() {
               multiline
               rows={8}
               fullWidth
+              value={userPrompt}
+              onChange={(e) => setUserPrompt(e.target.value)}
             />
+            <Button
+              sx={{
+                mt: 1,
+              }}
+              variant="contained"
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>
           </Box>
+          <Typography
+            color="white"
+            sx={{
+              whiteSpace: "pre-wrap",
+            }}
+          >
+            response:
+            {response}
+          </Typography>
         </Container>
       </main>
     </>
