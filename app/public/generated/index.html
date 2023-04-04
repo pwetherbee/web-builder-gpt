@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Random Meme Generator</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirate Pizza Party</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-	<header>
-		<h1>Random Meme Generator</h1>
-	</header>
-	<div id="meme-container">
-		<img src="https://i.imgur.com/QxPEbcL.jpg" alt="Meme">
-		<img src="https://i.imgur.com/OLbXxJx.jpg" alt="Meme">
-		<img src="https://i.imgur.com/PkPodtT.jpg" alt="Meme">
-		<img src="https://i.imgur.com/WCtyHOT.jpg" alt="Meme">
-		<img src="https://i.imgur.com/2Qz1B50.jpg" alt="Meme">
-	</div>
-	<button id="generate-btn">Generate Meme</button>
+    <header>
+        <h1>Pirate Pizza Party</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Arrr, welcome to the Pirate Pizza Party!</h2>
+        <p>Enjoy our delicious pizza treasures, perfect for any pirate gathering!</p>
+        <img src="https://via.placeholder.com/400x200" alt="Pizza" class="pizza-image">
+        <pre>
+         _._
+      .-   ' '   -.
+     /    ( 0 0 )    \
+    /   \   (v )   /  
+  (    uu' '  'uu    )</pre>
+
+        <button onclick="showPirateJoke()">Click for a Pirate Joke!</button>
+        <p id="pirateJoke"></p>
+    </main>
 </body>
 </html>
-
