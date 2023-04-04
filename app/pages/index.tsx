@@ -18,6 +18,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
+const testText = `Give me a website that is all about trees. It has a nice green gradient background.`;
 
 export default function Home() {
   const router = useRouter();
@@ -104,6 +105,13 @@ export default function Home() {
               onClick={handleSubmit}
             >
               Submit
+            </Button>
+            <Button
+              sx={{ ml: 1, mt: 1 }}
+              variant="contained"
+              onClick={() => setUserPrompt(testText)}
+            >
+              Test Text
             </Button>
           </Box>
           <Typography
