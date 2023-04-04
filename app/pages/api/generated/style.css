@@ -1,0 +1,20 @@
+body {
+  background: linear-gradient(90deg, #8b2249, #f87d87);
+}
+
+button {
+  background-color: #24800b;
+  color: white;
+  font-size: 18px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+#random-result {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
