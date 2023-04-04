@@ -35,7 +35,7 @@ export default function Home() {
       const res = await axios.post("/api/create-site", data);
       console.log(res.data);
       setLoading(false);
-      router.push("/generated/index.html");
+      router.push("api/serve-file?fileName=index.html");
       setResponse(res.data.message);
     } catch (error) {
       console.error(error);

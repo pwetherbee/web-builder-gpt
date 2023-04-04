@@ -8,22 +8,14 @@ export default function createFilesFromInput(input: string) {
 
   console.log("creating files from input");
 
+  const generatedFiles: { [key: string]: string } = {};
+
   while ((match = filePattern.exec(input)) !== null) {
     const fileName = match[1];
     const fileContent = match[2];
 
-    // Construct the full file path using the current working directory
-    const filePath = path.join(process.cwd(), folder, fileName);
-
-    // Extract the directory path and create the directory if it doesn't exist
-    const dirPath = path.dirname(filePath);
-    if (!fs.existsSync(dirPath)) {
-      fs.mkdirSync(dirPath, { recursive: true });
-    }
-
-    fs.writeFileSync(filePath, fileContent, (err: any) => {
-      if (err) throw err;
-      console.log(`Created ${filePath}`);
-    });
+    generatedFiles[fileName] = fileContent;
   }
+
+  return generatedFiles;
 }

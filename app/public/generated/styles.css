@@ -1,0 +1,92 @@
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #D1D1D1;
+    padding: 10px 20px; 
+}
+
+h1 {
+    font-size: 32px;
+    color: #212121;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    display: block;
+    color: #212121;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.hero {
+    background-image: url("https://images.unsplash.com/photo-1553284961-9fa17c0e11ec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXdheXNzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
+    height: 500px;
+    background-size: cover;
+    background-position: center center;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    font-size: 24px;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #343434;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+}
+
+button:hover {
+    background-color: #606060;
+}
+```
