@@ -14,16 +14,25 @@ export default async function handler(
   const { userPrompt } = req.body;
 
   try {
-    const response = await gptAPI.post("/completions", {
+    const response = await gptAPI.post("/chat/completions", {
       model: process.env.GPT_MODEL_ID,
-      max_tokens: 2000,
-      prompt: `${userPrompt}\n${prompts.websiteBuilder}`,
+      messages: [
+        {
+          role: "system",
+          content: prompts.websiteBuilder,
+        },
+        {
+          role: "user",
+          content: userPrompt,
+        },
+      ],
       //   prompt: "hello! what is your name?",
     });
     console.log(response.data);
 
     // use prompt to generate files
-    createFilesFromInput(response.data.choices[0].text);
+    // createFilesFromInput(response.data.choices[0].text);
+    createFilesFromInput(response.data.choices[0].message.content);
 
     res.status(200).json({ message: "Success" });
   } catch (error) {

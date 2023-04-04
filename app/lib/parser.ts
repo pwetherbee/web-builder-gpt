@@ -21,7 +21,7 @@ export default function createFilesFromInput(input: string) {
       fs.mkdirSync(dirPath, { recursive: true });
     }
 
-    fs.writeFile(filePath, fileContent, { flag: "w" }, (err: any) => {
+    fs.writeFileSync(filePath, fileContent, (err: any) => {
       if (err) throw err;
       console.log(`Created ${filePath}`);
     });

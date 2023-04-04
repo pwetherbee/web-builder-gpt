@@ -3,8 +3,10 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import {
+  Backdrop,
   Box,
   Button,
+  CircularProgress,
   Container,
   Divider,
   Paper,
@@ -32,6 +34,7 @@ export default function Home() {
       console.log(data);
       const res = await axios.post("/api/create-site", data);
       console.log(res.data);
+      setLoading(false);
       router.push("/generated/index.html");
       setResponse(res.data.message);
     } catch (error) {
@@ -50,6 +53,12 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Container>
+          <Backdrop
+            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={loading}
+          >
+            <CircularProgress color="inherit" />
+          </Backdrop>
           <Typography variant="h1" component="h1">
             PromptSite
           </Typography>

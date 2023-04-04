@@ -1,8 +1,8 @@
 
-document.getElementById('generate-button').addEventListener('click', generateRandomNumber);
+```js
+const generateButton = document.getElementById("generate-button");
 
-function generateRandomNumber() {
-	let num = Math.floor(Math.random() * 100);
-	
-	document.getElementById('generated-number').innerHTML = num;
-}
+generateButton.addEventListener("click", () => {
+  alert("Sorry, the website generation feature is not available yet. Please check back soon!");
+});
+```
