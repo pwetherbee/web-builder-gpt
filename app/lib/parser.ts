@@ -60,7 +60,7 @@ async function fetchImageURL(query: any) {
       response.data.results &&
       response.data.results.length > 0
     ) {
-      return response.data.results[0].urls.small;
+      return response.data.results[0].urls.regular;
     } else {
       console.error("No image found for query:", query);
       return null;
@@ -74,9 +74,11 @@ async function fetchImageURL(query: any) {
 // Function to replace placeholders with actual image URLs
 async function replaceImagePlaceholders(input: string) {
   const imagePlaceholderPattern = /\[\$image=(.+?)\]/g;
+  const generateImagePattern = /\[\$generate=(.+?)\]/g;
   let match;
   let modifiedInput = input;
 
+  // Replace $image placeholders
   while ((match = imagePlaceholderPattern.exec(input)) !== null) {
     const query = match[1];
     const imageUrl = await fetchImageURL(query);
@@ -88,5 +90,48 @@ async function replaceImagePlaceholders(input: string) {
     }
   }
 
+  // Replace $generate placeholders
+  while ((match = generateImagePattern.exec(input)) !== null) {
+    const prompt = match[1];
+    const generatedImageUrl = await fetchGeneratedImageURL(prompt);
+
+    if (generatedImageUrl) {
+      modifiedInput = modifiedInput.replace(match[0], generatedImageUrl);
+    } else {
+      console.warn(
+        `No image generated for prompt '${prompt}', leaving placeholder.`
+      );
+    }
+  }
+
   return modifiedInput;
+}
+
+async function fetchGeneratedImageURL(prompt: string) {
+  try {
+    const response = await axios.post(
+      "https://api.openai.com/v1/images/generations",
+      {
+        prompt,
+        n: 1,
+        size: "1024x1024",
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        },
+      }
+    );
+
+    if (response.data && response.data.data && response.data.data.length > 0) {
+      return response.data.data[0].url;
+    } else {
+      console.error("No image generated for prompt:", prompt);
+      return null;
+    }
+  } catch (error) {
+    console.error("Error fetching generated image URL:", error);
+    return null;
+  }
 }

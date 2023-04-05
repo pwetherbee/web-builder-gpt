@@ -1,5 +1,1 @@
-```javascript
-function shareEvent() {
-    alert("Share the Celebrate America Day event with your friends!");
-}
-```
+// You can add any JavaScript functionality, if required.

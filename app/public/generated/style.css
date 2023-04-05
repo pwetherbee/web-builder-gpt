@@ -1,99 +1,60 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+   background-color: pink;
+   font-family: Comic Sans MS, cursive, sans-serif;
+   color: blue;
 }
 
 header {
-  background-color: #ff0000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-  color: #fff;
+   background-color: yellow;
+   padding: 20px;
 }
 
-header img {
-  max-width: 100%;
+header h1 {
+   font-size: 80px;
+   color: red;
+   text-shadow: 4px 4px black;
 }
 
-h1 {
-  font-size: 3rem;
-  margin: 20px 0 10px 0;
-  text-align: center;
+header li {
+   display: inline-block;
+   margin-right: 20px;
 }
 
 main {
-  margin: 40px;
+   padding: 20px;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.container {
+   display: flex;
+   flex-wrap: wrap;
 }
 
-ul {
-  list-style: none;
+.meme {
+   width: 300px;
+   margin: 20px 10px;
+   padding: 20px;
+   background-color: green;
+   border: 10px solid purple;
+   text-align: center;
 }
 
-a {
-  color: #1c1c1c;
-  text-decoration: none;
+.meme img {
+   width: 100%;
+   height: auto;
+   margin-bottom: 10px;
 }
 
-/* Carousel */
-.slider {
-  display: flex;
-  width: 90%;
-  margin: auto;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+.meme p {
+   font-size: 24px;
+   color: yellow;
+   text-shadow: 2px 2px black;
 }
 
-.slider::-webkit-scrollbar {
-  display: none;
+footer {
+   text-align: center;
+   padding: 20px;
+   background-color: orange;
+   color: white;
 }
 
-.slider > * {
-  flex: 0 0 auto;
-  scroll-snap-align: center;
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  margin-right: 10px;
-}
-
-/* Latest Articles */
-.latest-articles li::before {
-  content: "\f0a4";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 10px;
-  color: #1c1c1c;
-}
-
-/* Social Media Icons */
-.icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icons a {
-  margin: 0 10px;
-}
-
-.icons img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
