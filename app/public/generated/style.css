@@ -1,53 +1,94 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
+/* Navigation Styles */
 header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    display: inline;
-    margin-right: 1rem;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
-nav a:hover {
-    text-decoration: underline;
+/* Hero Section Styles */
+.hero-section {
+  background-image: url("https://images.unsplash.com/photo-1503435980610-a51f3ddfee50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MzE4NTV8MHwxfHNlYXJjaHwxfHxkZW5zZSUyMHN1bmxpdCUyMGZvcmVzdCUyMHdpdGglMjBiZWFtcyUyMG9mJTIwc3VubGlnaHR8ZW58MHx8fHwxNjgwNjUyODY1&ixlib=rb-4.0.3&q=80&w=400");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-main {
-    padding: 2rem;
+.hero-text {
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-button {
-    background-color: #333;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-button:hover {
-    background-color: #555;
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.pizza-image {
-    width: 100%;
-    max-width: 400px;
+.hero-text button {
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-text button:hover {
+  background-color: #3e8e41;
+}
+
+/* Content Section Styles */
+.content-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
