@@ -1,3 +1,1 @@
-
-
-// Placeholder Script File
+// Add script code if necessary, but it is not required for the functionality of this website.

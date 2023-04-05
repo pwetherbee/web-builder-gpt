@@ -73,7 +73,7 @@ async function fetchImageURL(query: any) {
 
 // Function to replace placeholders with actual image URLs
 async function replaceImagePlaceholders(input: string) {
-  const imagePlaceholderPattern = /\[image-(.+?)\]/g;
+  const imagePlaceholderPattern = /\[\$image=(.+?)\]/g;
   let match;
   let modifiedInput = input;
 
